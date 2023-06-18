@@ -1,0 +1,32 @@
+{% extends 'register.html' %} {% block content %}
+
+<div class="sign-up">
+  <h1 class="title-heading">Update Your Profile</h1>
+  <form method="POST" class="user_form">
+    <!-- {{ form.hidden_tag() }} {{ form.hidden_tag() }} {% for field in form if
+    field.widget.input_type != 'hidden' %}
+    <p>
+      {{ field.label }} {{ field }} {% for error in field.errors %}
+      <span class="form-text text-danger">{{ error }}</span>
+      {% endfor %}
+    </p>
+    {% endfor %} -->
+
+    {{ form.hidden_tag() }} {% for field in form if field.widget.input_type !=
+    'hidden' and field.name != 'password' %} {% for error in field.errors %}
+    <span class="text-danger">{{error}}</span>
+    {% endfor %} {{field.label(class_="form_lable")}}
+    {{field(class_="form_input")}} {% endfor %}
+
+    <p>Enter password to confirm changes</p>
+
+    {% if form.password.errors %} {% for error in form.password.errors %}
+    <span class="text-danger"> {{ error }} </span>
+    {% endfor %} {% endif %} {{ form.password }}
+    <button type="submit" class="submit-btn update-btn">Update</button>
+    <!-- <a href="/login"><button class="cancel-btn">Cancel</button></a> -->
+    <a href="/" class="cancel-btn">Cancel</a>
+  </form>
+
+  {% endblock %}
+</div>
