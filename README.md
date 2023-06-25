@@ -13,10 +13,11 @@ The home page is where the user can search for recipes. For this app, I used htt
 
 If the user is interested in learning more about a specific recipe, they click on View Recipe. They can also add the recipe to the Favorites page by clicking the heart icon. 
 
-I decided to use Local Storage in order to keep track of any recipes that have been added to the favorites instead of saving each recipe into a database. 
-
-The Favorites link in the nav bar takes the user to the Favorite page where they will see a table that holds recipes that are added to the local storage. The table shows the name of the recipe and it has a View button and a Delete button.
+I decided to use Local Storage in order to keep track of any recipes that have been added to the favorites instead of saving each recipe into a database. The Favorites link in the nav bar takes the user to the Favorite page where they will see a table that holds recipes that are added to the local storage. The table shows the name of the recipe and it has a View button and a Delete button.
 
  ### Tech Stack
  Fron End: HTML CSS Bootstrap\
  Back End: Flask SQLAlchemy Python JavaScript 
+
+ ### Database
+ The applicaition has just one table that used to hold username, email an password. The password hashed and then saved to the db using bcrypt
