@@ -11,23 +11,27 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/static/style.css" />
     <title>Home Page</title>
   </head>
   <body>
-    {% block content %}
+    
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mx-auto">
-          <li class="nav-item px-5">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item px-4">
             <a class="nav-link" href="/">Home</a>
           </li>
-          <li class="nav-item px-5">
+          <li class="nav-item px-4">
             <a class="nav-link" href="/edit_profile">Edit Profile</a>
           </li>
+          <li class="nav-item px-4">
+            <a class="nav-link favorite" href="/favorites">Favorites</a>
+          </li>
         </ul>
-        <ul class="navbar-nav justify-content-end px-5">
+        <ul class="navbar-nav justify-content-end px-6">
           <li class="nav-item">
             <a class="nav-link" href="/logout"
               ><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a
@@ -36,7 +40,7 @@
         </ul>
       </div>
     </nav>
-
+    {% block content %}
     <div class="form-section">
       <h1 id="label">Search For Recipes Using Ingredients</h1>
       <form class="search-form">
@@ -49,16 +53,17 @@
       </form>
     </div>
 
-    <!-- <section>
+    <section>
       <div class="container initial">       
         <div class="search-result">  
+          
       </div>
-    </section> -->
-    <div class="row mt-3 search-result"></div>
+    </section>
+    
     {% endblock %}
   </body>
 
   <script src="http://unpkg.com/jquery"></script>
   <script src="http://unpkg.com/axios/dist/axios.js"></script>
-  <script src="static/app.js"></script>
+  <script src="static/app.js"></script>  
 </html>

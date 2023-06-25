@@ -90,6 +90,15 @@ def profile():
         flash("Incorrect password. Try again")
     return render_template('edit_profile.html', form=form, user_id=user.id)
 
+@app.route('/favorites', methods=["GET", "POST"])
+def show_favorites():
+    if not g.user:
+        flash("Access unauthorized.", "danger")
+        return redirect("/")
+    
+    return render_template ('favorites.html')
+
+
 @app.route('/logout')
 def logout():
     do_logout()
@@ -106,5 +115,4 @@ def do_login(user):
 
     session[CURR_USER_KEY] = user.id
 
-# @app.route('/home', methods=["GET","POST"])
-# def homepage():
+
