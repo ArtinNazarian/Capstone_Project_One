@@ -56,7 +56,7 @@ def register():
         return render_template('/register.html', form=form)
 
 
-
+#login route
 @app.route('/login', methods=["GET", "POST"])
 def login():
     form = LoginForm()
@@ -70,7 +70,7 @@ def login():
         flash("Invalid username and/or passowrd")
     return render_template('login.html', form=form)
 
-
+#update user profile route
 @app.route('/edit_profile', methods=["GET", "POST"])
 def profile():
     if not g.user:
